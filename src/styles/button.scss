@@ -1,0 +1,44 @@
+.button{
+  height: 50px;
+  border-radius: 8px;
+  font-weight: 500;
+  background: #835afd;
+  color: #FFF;
+  padding: 0 32px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+  border: 0;
+  transition: filter 0.25s;
+
+  img{
+    margin-right: 8px;
+  }
+
+  &.outlined{ //'&' quer dizer "quando". Quando o mouse estiver sobre esse botão outlined:
+    background: #FFF;
+    border: 1px solid #835afd;
+    color: #835afd;
+
+    &:not(:disabled):hover{ //efeito para quando passar o mouse por cima
+      filter: brightness(1);
+      -webkit-filter:  drop-shadow(15px 10px 5px rgba(0,0,0,.5));
+      filter: drop-shadow(15px 10px 5px rgba(169, 148, 228, 0.603));
+    }
+  }
+
+  //site com bons efeitos: http://www.codigoti.com.br/2018/10/css-hover-efeitos-de-transicoes-ao.html
+  &:not(:disabled):hover{ //efeito para quando passar o mouse por cima
+    filter: brightness(1);
+    -webkit-filter:  drop-shadow(15px 10px 5px rgba(0,0,0,.5));
+    filter: drop-shadow(15px 10px 5px rgba(70, 13, 230, 0.603));
+  }
+
+  &:disabled{
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
